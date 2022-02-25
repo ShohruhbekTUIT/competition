@@ -1,0 +1,38 @@
+*{
+  box-sizing: border-box;
+}
+.container{
+  width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.title{
+  text-align: center;
+  margin-bottom: 25px;
+}
+.site-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 35px;
+}
+.site-input{
+  margin: 0 20px;
+}
+.site-list{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+.site-item{
+  text-align: center;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 15px;
+}
+.site-img{
+  width: 100px;
+}
+.item-title{
+  margin-top: 0;
+}
