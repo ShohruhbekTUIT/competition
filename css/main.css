@@ -11,6 +11,7 @@
   margin-bottom: 25px;
 }
 .site-form{
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,4 +36,14 @@
 }
 .item-title{
   margin-top: 0;
+}
+.form__error{
+  position: absolute;
+  display: block;
+  border: 3px solid red;
+  color: red;
+  padding: 4px;
+  bottom: -32px;
+  left:455px;
+  font-size: small;
 }

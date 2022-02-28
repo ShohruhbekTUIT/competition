@@ -1,5 +1,6 @@
 var elForm = document.querySelector(".site-form");
 var elInput = document.querySelector(".site-input");
+var elSpan = document.querySelector(".form__span");
 var elResultp = document.querySelector(".person");
 var elResultb = document.querySelector(".bike");
 var elResultc = document.querySelector(".car");
@@ -11,11 +12,22 @@ elForm.addEventListener("submit" , function(event){
   event.preventDefault();
 
   var elInputVal = elInput.value;
-  if(elInputVal >=0 ){
-  return elResultp.textContent = Math.round(elInputVal / p) + " soat";
+  if(elInputVal > 0 ){
+    elSpan.textContent = " " ;
+    elSpan.classList.remove("form__error");
+  return elResultp.textContent = Math.round(elInputVal / p) + " soat " + Math.round(((elInputVal / p)*60) % 60) + " daqiqa";
   }
   else{
-  return elResultp.textContent = "Manfiy son kiritmang!" ;
+    if(elInputVal <= 0 || isNaN(elInputVal)){
+      
+
+      elSpan.textContent = "Iltimos 0  dan katta son kiriting !" ;
+  
+      elSpan.classList.add("form__error");
+  
+      
+    }
+   return elResultp.textContent = "😉!" ;;
   }
 });
 }
@@ -25,9 +37,9 @@ function competitionn(b){
   
     var elInputVal = elInput.value;
     if(elInputVal >=0 ){
-    return elResultb.textContent = Math.round(elInputVal / b) + " soat";
+    return elResultb.textContent = Math.round(elInputVal / b) + " soat " + Math.round((((elInputVal / b)*60) % 60)) + " daqiqa";
     }else{
-      return elResultb.textContent = "Manfiy son kiritmang!" ;
+      return elResultb.textContent = "😉!" ;
       }
   });
   }
@@ -36,10 +48,10 @@ function competitionnn(c){
       event.preventDefault();
     
       var elInputVal = elInput.value;
-      if(elInputVal >=0 ){
-      return elResultc.textContent = Math.round(elInputVal / c) + " soat";
+      if(elInputVal > 0 ){
+      return elResultc.textContent = Math.floor(elInputVal / c) + " soat " + Math.ceil((((elInputVal / c)*60)%60)) + " daqiqa";
       }else{
-        return elResultc.textContent = "Manfiy son kiritmang!" ;
+        return elResultc.textContent = "😉!" ;
         }
     });
     }
@@ -48,15 +60,15 @@ function competitionnnn(pl){
         event.preventDefault();
       
         var elInputVal = elInput.value;
-        if(elInputVal >=0 ){
+        if(elInputVal > 0 ){
           if(elInputVal % 800 == 0){
         return elResultpl.textContent = (elInputVal / pl) + " soat";
         }
         else{
-          return elResultpl.textContent = (elInputVal / pl).toFixed(3) + " soat";
+          return elResultpl.textContent = Math.round(elInputVal / pl) + " soat " + Math.round(((elInputVal/pl)*60 % 60)) + " daqiqa";
         }
         }else{
-          return elResultpl.textContent = "Manfiy son kiritmang!" ;
+          return elResultpl.textContent = "😉!" ;
           }
       });
       }
